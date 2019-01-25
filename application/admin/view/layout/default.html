@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="common/meta" /}
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <!-- 头部logo与菜单 -->
+    {include file='common/header' /}
+    <!-- 头部logo与菜单 -->
+    <!-- 左侧边栏菜单 -->
+    {include file='common/menu' /}
+    <!-- 左侧边栏菜单 -->
+    <div class="site-tree-mobile layui-hide">
+        <i class="layui-icon">&#xe602;</i>
+    </div>
+    <div class="site-mobile-shade"></div>
+    <!--  主体栏 -->
+    <div class="layui-body" id="B_frame">
+    {include file='common/main' /}
+    </div>
+    <!--  主体栏 -->
+    <!-- 底部 -->
+    <div class="layui-footer">©&nbsp;2019.01.21&nbsp;<a href="https://www.cbjwww.cn" target="__blank">che-my</a>
+    </div>
+    <!-- 底部 -->
+</div>
+{include file="common/script" /}
+</body>
+</html>

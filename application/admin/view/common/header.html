@@ -1,0 +1,21 @@
+<div class="layui-header layui-bg-cyan"> 
+  <a href="#" class="logo">后台管理系统</a>
+  <a href="javascript:;" class="hideMenu icon iconfont  icon-liebiao layui-bg-black"></a>
+  <ul class="layui-nav topLevelMenus" id="J_B_main_block">
+      <!--AJAX数据-->
+  </ul>
+  <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item"><a href="javascript:;"><i class="iconfont icon-richangqingli"></i></a>
+          <dl class="layui-nav-child" id="deletecache">
+              <dd><a href="javascript:;" data-type="all">一键清理缓存</a></dd>
+              <dd><a href="javascript:;" data-type="data">清理数据缓存</a></dd>
+              <dd><a href="javascript:;" data-type="template">清理模板缓存</a></dd>
+          </dl>
+      </li>
+      <li class="layui-nav-item"><a href="javascript:;"><img src="__STATIC__/assets/admin/img/avatar.png" class="layui-nav-img userAvatar" width="35" height="35">admin</a>
+          <dl class="layui-nav-child">
+              <dd><a href="{:url('admin/index/logout')}">安全退出</a></dd>
+          </dl>
+      </li>
+  </ul>
+</div>

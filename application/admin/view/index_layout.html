@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>后台管理系统</title>
+    <meta name="author" content="YZNCMS">
+    <link rel="stylesheet" href="__STATIC__/assets/libs/layui/css/layui.css">
+    <link rel="stylesheet" href="__STATIC__/assets/admin/css/admin.css">
+    <link rel="stylesheet" href="__STATIC__/assets/admin/font/iconfont.css">
+    <script src="__STATIC__/assets/libs/layui/layui.js"></script>
+    <script src="__STATIC__/assets/admin/js/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="__STATIC__/assets/admin/lib/inverted-theme/jquery.fonticonpicker.inverted.min.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/assets/admin/lib/bootstrap-theme/jquery.fonticonpicker.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/assets/admin/lib/css/jquery.fonticonpicker.min.css" />
+    <link rel="stylesheet" type="text/css" href="__STATIC__/assets/admin/css/menu.css" />
+    <!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script type="text/javascript">
+//全局变量
+var GV = {
+    'image_upload_url': '{$image_upload_url ? $image_upload_url : url("attachment/attachments/upload", ["dir" => "images", "module" => request()->module()])}',
+    'WebUploader_swf': '__STATIC__/webuploader/Uploader.swf',
+    'upload_check_url': '{$upload_check_url ? $upload_check_url : url("attachment/Attachments/check")}',
+};
+</script>
+</head>
+<body class="childrenBody">
+
+    {block name="main"}主内容{/block}
+    {block name="script"}{/block}
+   
+</body>
+<script>
+   $("#icons2").on('click',function(){
+        $(".selector-popup").slideToggle();
+        var data = $(this).attr("data");
+        $('.cover').show()
+        if(data=='1'){
+            $(this).html("<i class='fip-icon-up-dir'></i>");
+            $(this).attr("data",'0');
+            
+        }else{
+            $(this).html("<i class='fip-icon-down-dir'></i>");
+            $(this).attr("data",'1');
+        }     
+    });
+   $('.cover').click(function(){
+        $(this).hide();
+        $(".selector-popup").slideUp();
+        $("#icons2").html("<i class='fip-icon-down-dir'></i>");
+        $("#icons2").attr("data",'1');
+   })
+    function funclick(obj){
+        $("#icons2").html("<i class='fip-icon-down-dir'></i>");
+        $("#icons1").html($(obj).html());
+        var value = $(obj).children().attr("class");
+        $("#icon").val(value);
+        $(".cover").hide();
+        $(".selector-popup").slideUp();
+        $("#icons2").attr("data",'1');
+    }
+    // $("body").on("click",function(){
+    //     $(".selector-popup").slideUp();
+    // });
+</script>
+</html>
